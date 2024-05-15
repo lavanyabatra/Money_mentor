@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://toplinemanagement.com/wp-content/uploads/2017/01/top-line-management-login-background-1.jpg');
+
+            display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+        
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .login-container:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .form-group input[type='submit'] {
+            background-color: #4caf50;
+            color: #cdbebe;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-group input[type='submit']:hover {
+            background-color: #46a049;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .form-options a {
+            margin-left: 10px;
+            margin-bottom: 8px;
+            margin-top: 5px;
+            transition: ease-in-out 0.5s;
+        }
+        .form-options a:hover {
+            color: red;
+        }
+        .form-group img {
+            height: 20px;
+            width: 25px;
+            display: flex;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body><center>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" action="#" method="post" onsubmit="return false">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+                <img src="eye-close.png" id="eyeicon" />
+            </div>
+            <div class="form-options">
+                <div>
+                    <input type="checkbox" id="remember" name="remember" />
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Forget Password</a>
+            </div>
+            <div class="form-options" style="margin-left: 10px;">
+                <span>New to our site?
+                    <a href="./prj-register.html">Create an account</a></span>
+            </div></div>
+            
+<button pys-onClick="sub" type="submit" id="btn-form" value="Submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 10px; ">
+    LOGIN
+  </button>
+  
+ 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN INFO</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p id ="output"></p><br>
+            <p id ="output1"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                  
+        </form>
+   
+
+    <script>
+        let eyeicon = document.getElementById('eyeicon');
+        let password = document.getElementById('password');
+
+        eyeicon.onclick = function () {
+            if (password.type == 'password') {
+                password.type = 'text';
+                eyeicon.src = 'eye-open.png';
+            } else {
+                password.type = 'password';
+                eyeicon.src = 'eye-close.png';
+            }
+        };
+    </script>
+    <py-script>
+
+        def sub(args,*kwargs):
+            result_place = Element('output')
+            result_place.write(f"Username:{Element('username').value} Password: {Element('password').value}")
+        
+    </py-script>
+</div></center>
+</body>
+</html>

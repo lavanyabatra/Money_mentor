@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Personal Finance Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            ;background-color: rgb(246, 239, 224);
+        }
+        header {
+            background-color:rgb(55, 50, 50);
+            color: wheat;
+            padding: 20px;border-radius: 40px;}
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+        .div1{
+            width: 45%;margin-right: 40px;margin-top: 100px;margin-left: 50px;
+        }
+        .div2{
+            width: 45%;margin-left: 100px;margin-top: 100px;
+        }
+        .div3{
+            width: 45%;margin-top: 50px;margin-left: 50px;
+        }
+        .div4{
+            width: 45%;margin-top: 100px;
+        }
+        .div5{
+            width: 45%;margin-top: 150px;margin-left: 50px;margin-right: 40px;
+        }
+        
+        .div6{
+            width: 45%;margin-left: 100px;margin-top: 100px;
+        }
+        .main{
+            display: flex;
+        }
+        .main2{
+            display: flex;
+        }
+        .main3{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center><h1>OVER VIEW</h1></center>
+    </header>
+    
+    <h1></h1><div class="main">
+    <div class="div1">
+    <h1>SAVE TIME ON EXPENSE REPORT</h1>
+    <H3>Managing your employees' daily expenses has never been easier. Whether it's travel expenses, office supplies, or any other employee expenditure, access all receipts and expense submissions from your Expenses dashboard and create, validate, or refuse them in just a click. No need to download a specialized software to maintain expense records - everything can be done directly through the app!</H3>
+    </div>
+    <div class="div2">
+        <img src="save.jpg" style="width: 70%;box-shadow: 5px 5px 5px;margin-left: 100px;">
+    </div></div><div class="main2">
+    <div class="div3">
+        <img src="sav1.jpg" style="width: 70%;box-shadow: 5px 5px 5px;margin-right: 100px;">
+    </div>
+    <div class="div4">
+        <BR>
+            <H1>STOP LOOSING RECIEPTS</H1>
+            <H3>Upload all receipts directly into the expense record.
+                Employees can easily attach copies of their receipts directly to an expense record to avoid losing them. Add attachments on the go with any mobile device by taking a picture of the receipt and sending to a designated email address. Save time and increase efficiency by keeping a clean and complete record of all expenses.</H3>
+                <BR></div></div><div class="main3">
+                    <div class="div5">
+            <h1>MANAGE EXPENSES PER TEAM</H1>
+                <H3>Have a clear overview of a team's expenditures.
+                    As a manager, easily follow expense records across the entire team to keep an eye on costs and ensure they keep on target and within budget.</H3>
+                   </div>
+                   <div class="div6">
+                    <img src="save2.jpg" style="width: 70%;box-shadow: 5px 5px 5px;margin-right: 100px;">
+                </div></div>
+                   <center> <h1>SHARE THE WORKLOAD BETWEEN DEPARTMENTS </H1>
+                        <H3>Get everyone involved to save time.</H3>
+    <footer>
+        &copy; 2023 Personal Finance Manager
+        <py-script>
+            from datetime import datetime
+           
+            print(f"Site opened at {datetime.now()}")
+            </py-script>
+    </footer></center>
+</body>
+</html>
